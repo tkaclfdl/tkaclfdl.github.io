@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Saved Inputs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" id="menuCheckbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="display.html">할 일 목록</a></li>
+                <ul id="menuItemsList"></ul>
+            </ul>
+        </div>
+    </nav>
+    <div class="display-container">
+        <h1>목표</h1>
+        <ul id="savedTextsList">
+            <!-- 동적으로 추가된 입력값이 여기에 표시됩니다 -->
+        </ul>
+        <p class="refresh-message"></p> <!-- 추가된 부분 -->
+        <a href="index.html" class="back-link">돌아가기</a>
+    </div>
+    <script src="display.js"></script>
+</body>
+</html>
