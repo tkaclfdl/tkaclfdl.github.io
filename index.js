@@ -29,28 +29,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 key,
                 value: JSON.parse(localStorage.getItem(key))
             }))
-            .sort((a, b) => a.timestamp - b.timestamp); // Sort by oldest first
+            .sort((a, b) => a.timestamp - b.timestamp); 
 
-        // Clear existing menu items
         menuItemsList.innerHTML = '';
 
-        // Show the oldest item if it exists
+    
         if (items.length > 0) {
             const oldestItem = items[0];
             const listItem = document.createElement('li');
             listItem.textContent = `${oldestItem.value.text} (${formatElapsedTime(oldestItem.timestamp)})`;
 
-            // Add click event to navigate with query parameter
+
             listItem.addEventListener('click', () => {
                 window.location.href = `display.html?key=${encodeURIComponent(oldestItem.key)}`;
             });
 
             menuItemsList.appendChild(listItem);
 
-            // Show reminder message
             reminderMessage.textContent = "가장 오랜된 목표:";
         } else {
-            // If no items, show a different message
             reminderMessage.textContent = "저장된 항목이 없습니다.";
         }
     }
@@ -61,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Initial load of the oldest item when the page loads
     loadOldestItemInMenu();
 });
 
@@ -70,7 +66,7 @@ document.getElementById('userInput').addEventListener('input', function() {
     clearTimeout(this.brightnessTimeout);
     this.brightnessTimeout = setTimeout(() => {
         this.classList.remove('brightening');
-    }, 200);
+    }, 250);
 });
 
 document.getElementById('userInput').addEventListener('keypress', function(event) {
